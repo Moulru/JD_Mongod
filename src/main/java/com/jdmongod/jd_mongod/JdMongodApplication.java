@@ -10,4 +10,5 @@ public class JdMongodApplication {
         SpringApplication.run(JdMongodApplication.class, args);
     }
 
+
 }
