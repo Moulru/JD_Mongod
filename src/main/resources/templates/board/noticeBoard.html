@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +38,9 @@
 
     function signUp() {
         alert('회원가입 페이지로 이동합니다.');
+        location.href = '/userJoin'; // 이동할 URL
     }
+
 </script>
 </body>
 </html>

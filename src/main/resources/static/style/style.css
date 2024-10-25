@@ -7,37 +7,45 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
+
 .form-section {
     width: 60%;
     border: 2px solid black;
     padding: 20px;
 }
+
 .login-section {
     width: 20%;
     border: 2px solid black;
     padding: 20px;
     margin-left: 20px;
 }
+
 .login-section input {
     display: block;
     margin-bottom: 10px;
-    width: 100%;
+    width: 95%;
     padding: 8px;
 }
+
 .login-section button {
-    width: 48%;
-    padding: 10px;
-    margin-right: 4%;
+    width: 40%;
+    padding: 8px;
+    margin-right: 2%;
     cursor: pointer;
 }
+
 .form-section textarea {
-    width: 100%;
+    width: 98%;
     height: 300px;
     padding: 10px;
     font-size: 16px;
+    resize: none;
 }
 
 #content, #title {
-    padding-right: 0px;
+    padding-right: 1px;
 }
