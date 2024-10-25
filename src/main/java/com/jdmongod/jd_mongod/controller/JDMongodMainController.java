@@ -10,6 +10,11 @@ public class JDMongodMainController {
   // 임시 컨트롤러
   @GetMapping("/noticeBoard")
   public String firstController() {
-    return "noticeBoard";
+    return "board/noticeBoard";
+  }
+
+  @GetMapping("/test")
+  public String testController() {
+    return "test";
   }
 }
