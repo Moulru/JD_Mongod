@@ -8,7 +8,6 @@ public class JdMongodApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(JdMongodApplication.class, args);
-        // test kdh
     }
 
 
