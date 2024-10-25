@@ -13,6 +13,11 @@ public class JDMongodMainController {
     return "board/noticeBoard";
   }
 
+  @GetMapping("/userJoin")
+  public String joinController() {
+    return "board/userJoin";
+  }
+
   @GetMapping("/test")
   public String testController() {
     return "test";
