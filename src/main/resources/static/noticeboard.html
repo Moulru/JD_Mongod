@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 게시판</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #218838;
+        }
+        .post-list {
+            margin-top: 30px;
+        }
+        .post {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .post h3 {
+            margin: 0;
+        }
+        .post p {
+            margin: 5px 0 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>게시판</h1>
+
+    <div class="form-group">
+        <label for="title">제목:</label>
+        <input type="text" id="title" placeholder="제목을 입력하세요">
+    </div>
+
+    <div class="form-group">
+        <label for="content">내용:</label>
+        <textarea id="content" rows="5" placeholder="내용을 입력하세요"></textarea>
+    </div>
+
+    <div class="form-group">
+        <button id="postBtn">게시하기</button>
+    </div>
+
+    <div class="post-list" id="postList"></div>
+</div>
+
+<script>
+    // 게시 버튼을 클릭하면 새로운 게시글을 추가하는 함수
+    document.getElementById('postBtn').addEventListener('click', function() {
+        const title = document.getElementById('title').value;
+        const content = document.getElementById('content').value;
+
+        if (title === '' || content === '') {
+            alert('제목과 내용을 입력해주세요.');
+            return;
+        }
+
+        // 게시글을 담을 div 생성
+        const postDiv = document.createElement('div');
+        postDiv.classList.add('post');
+
+        // 제목을 담을 h3 생성
+        const postTitle = document.createElement('h3');
+        postTitle.innerText = title;
+
+        // 내용을 담을 p 생성
+        const postContent = document.createElement('p');
+        postContent.innerText = content;
+
+        // postDiv에 제목과 내용 추가
+        postDiv.appendChild(postTitle);
+        postDiv.appendChild(postContent);
+
+        // postList에 게시글 추가
+        document.getElementById('postList').appendChild(postDiv);
+
+        // 입력 필드 초기화
+        document.getElementById('title').value = '';
+        document.getElementById('content').value = '';
+    });
+</script>
+
+</body>
+</html>
